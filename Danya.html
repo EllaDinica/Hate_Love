@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Hate_Love</title>
+    <style>
+        body{
+            background-color: #800013;
+            color: #bfbfbf;
+            text-align: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', monospace;
+        }
+
+        #container{
+            font-size: 300%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        let verse = [
+            "Я всегда хотел чтобы она была моей",
+            "Я помнил ее столько же сколько й себя",
+            "Маленькая",
+            "Кудрявая",
+            "Смелая",
+            "Истошно вопящая",
+            "И с вечними синяками на коленках"
+        ];
+        
+        let index = 0;
+        
+        function danyaVerse(){
+            $("#container").fadeOut(3000, function(){
+                $(this).text(verse[index]).fadeIn(3000);
+                index = (index + 1) % verse.length;
+            });
+        };
+        
+        setInterval(danyaVerse, 6000);
+        danyaVerse();
+    </script>
+</body>
+</html>
